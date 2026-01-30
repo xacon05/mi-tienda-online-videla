@@ -3,169 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Profesional - Bayeta Técnica</title>
+    <title>Distribución Profesional - Vileda</title>
     <style>
-        /* Estética Minimalista y Seria */
         :root {
-            --negro: #121212;
-            --gris-suave: #f5f5f7;
-            --azul-corp: #0071e3;
-            --blanco: #ffffff;
+            --vileda-red: #e2001a; /* El rojo característico de la marca */
+            --dark: #1a1a1a;
+            --bg: #ffffff;
+            --gray: #f4f4f4;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--blanco);
-            color: var(--negro);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: var(--bg);
+            color: var(--dark);
         }
 
         .container {
             max-width: 1100px;
-            width: 90%;
-            margin-top: 80px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        /* Estructura de Ficha Técnica */
-        .hero {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
+        /* Cabecera */
+        header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .image-box {
-            background: var(--gris-suave);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--vileda-red);
+            text-transform: uppercase;
         }
 
-        .image-box img {
-            width: 100%;
-            border-radius: 15px;
-            display: block;
-        }
-
-        .content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -1.5px;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        /* EL BOTÓN QUE SÍ HACE ALGO */
-        .btn-principal {
-            background: var(--negro);
-            color: var(--blanco);
-            padding: 18px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-principal:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            background: var(--azul-corp);
-        }
-
-        /* SECCIÓN OCULTA (Se activa al pulsar) */
-        #detalles-tecnicos {
-            display: none; /* Empieza oculto */
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--gris-suave);
-            border-radius: 20px;
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .specs-grid {
+        /* Layout Principal */
+        .main-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
         }
 
-        .spec-item {
-            background: white;
+        /* Contenedor de la Imagen */
+        .product-image-container {
+            background: var(--gray);
+            border-radius: 8px;
             padding: 20px;
-            border-radius: 12px;
             text-align: center;
         }
 
-        .spec-item h4 { margin: 0; color: var(--azul-corp); }
+        .product-image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            mix-blend-mode: multiply; /* Para que el fondo blanco de la foto se integre */
+        }
+
+        /* Info y Venta */
+        .product-info h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--vileda-red);
+            margin: 20px 0;
+        }
+
+        .contact-box {
+            background: #fff;
+            border: 2px solid var(--dark);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 4px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-method strong {
+            width: 80px;
+            color: #555;
+        }
+
+        /* Botón Bizum con estilo */
+        .bizum-tag {
+            background-color: #00aae4;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .btn-contact {
+            display: block;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: var(--vileda-red);
+        }
+
+        @media (max-width: 768px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <section class="hero">
-            <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=800" alt="Bayeta Profesional">
-            </div>
+<div class="container">
+    <header>
+        <div class="logo">Vileda Professional</div>
+        <div class="status">● Disponible en stock</div>
+    </header>
 
-            <div class="content">
-                <h1>Bayeta Tech-Pro</h1>
-                <p class="tagline">La herramienta definitiva para el mantenimiento de superficies críticas. Ingeniería textil de alto impacto.</p>
+    <div class="main-grid">
+        <div class="product-image-container">
+            <img src="https://m.media-amazon.com/images/I/71R2oI87X5L._AC_SL1500_.jpg" alt="Bayeta Vileda Profesional">
+        </div>
+
+        <div class="product-info">
+            <h1>Bayeta Vileda Original</h1>
+            <p>Máxima capacidad de limpieza y durabilidad profesional. No deja rastros, absorción superior garantizada.</p>
+            
+            <div class="price">Consultar Lote</div>
+
+            <div class="contact-box">
+                <h3>Métodos de Pago y Contacto</h3>
                 
-                <button class="btn-principal" onclick="mostrarDetalles()">Saber más</button>
-            </div>
-        </section>
+                <div class="contact-method">
+                    <strong>Bizum:</strong> <span>+34 600 000 000</span> <span class="bizum-tag">PAGO RÁPIDO</span>
+                </div>
 
-        <div id="detalles-tecnicos">
-            <h2>Especificaciones Técnicas</h2>
-            <div class="specs-grid">
-                <div class="spec-item">
-                    <h4>Absorción</h4>
-                    <p>800% de su peso</p>
+                <div class="contact-method">
+                    <strong>Email:</strong> <span>contacto@tuempresa.com</span>
                 </div>
-                <div class="spec-item">
-                    <h4>Material</h4>
-                    <p>Microfibra HD</p>
-                </div>
-                <div class="spec-item">
-                    <h4>Vida Útil</h4>
-                    <p>+500 Lavados</p>
-                </div>
+
+                <a href="mailto:contacto@tuempresa.com" class="btn-contact">PEDIR AHORA</a>
             </div>
+            
+            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">
+                * Envíos urgentes disponibles tras confirmación de pago por Bizum.
+            </p>
         </div>
     </div>
-
-    <script>
-        // La lógica para que el botón funcione
-        function mostrarDetalles() {
-            var seccion = document.getElementById("detalles-tecnicos");
-            if (seccion.style.display === "none" || seccion.style.display === "") {
-                seccion.style.display = "block";
-                window.scrollTo({
-                    top: seccion.offsetTop,
-                    behavior: 'smooth'
-                });
-            } else {
-                seccion.style.display = "none";
-            }
-        }
-    </script>
+</div>
 
 </body>
 </html>
