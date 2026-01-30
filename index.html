@@ -3,132 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videlas Premium | Limpieza Profesional</title>
+    <title>Presentación Profesional | Proyecto Bayeta</title>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --gold: #c5a059;
-            --bg: #f9f9f9;
-            --text: #333;
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Playfair Display', serif; /* Fuente elegante y formal */
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
         }
 
-        header {
-            background: white;
+        /* Contenedor principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
         }
 
-        header h1 { 
-            margin: 0; 
-            letter-spacing: 4px; 
-            color: var(--primary);
+        /* Encabezado */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        h1 {
             font-size: 2.5rem;
+            color: #1a1a1a;
+            letter-spacing: -1px;
         }
 
-        .hero {
-            max-width: 900px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        /* Sección de contenido */
+        .main-content {
+            display: flex;
             align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
-        .hero img {
+        .text-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .text-section h2 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* Estilo de la Imagen */
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .product-image {
             width: 100%;
-            height: auto;
-            border-radius: 4px;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .product-info { padding: 20px; }
-        
-        .brand { color: var(--gold); font-weight: bold; letter-spacing: 2px; }
-        
-        .price { 
-            font-size: 2.2rem; 
-            margin: 20px 0; 
-            color: var(--primary);
-            font-family: sans-serif;
+        .product-image:hover {
+            transform: scale(1.02);
         }
 
-        .form-group { margin-bottom: 20px; }
-
-        input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-top: 8px;
+        /* Pie de página */
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
         }
 
-        .bizum-btn {
+        /* Botón de acción */
+        .btn {
             display: inline-block;
-            width: 100%;
-            background-color: #00aae4; /* Color oficial Bizum */
-            color: white;
-            text-align: center;
-            padding: 18px;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 12px 25px;
             text-decoration: none;
-            font-weight: bold;
-            font-family: sans-serif;
             border-radius: 5px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .bizum-btn:hover { background-color: #008cb8; }
-
-        .footer-note {
-            font-size: 0.8rem;
-            color: #777;
-            margin-top: 15px;
-            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <div class="brand">EXCELENCIA EN LIMPIEZA</div>
-    <h1>VIDELAS PREMIUM</h1>
-</header>
+    <div class="container">
+        <header>
+            <h1>Catálogo de Productos</h1>
+        </header>
 
-<div class="hero">
-    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop" alt="Bayetas Videlas">
-    
-    <div class="product-info">
-        <h2>Bayeta Microfibra Videla</h2>
-        <p>Tecnología avanzada para un acabado impecable en cristales y superficies delicadas. Utilizada por profesionales del sector.</p>
-        
-        <div class="price">20,00€</div>
+        <main class="main-content">
+            <div class="text-section">
+                <h2>Innovación en Limpieza</h2>
+                <p>Presentamos nuestra solución técnica de alta absorción. Este material ha sido diseñado para ofrecer el máximo rendimiento en entornos profesionales, garantizando durabilidad y eficacia en cada pasada.</p>
+                <p>Ideal para superficies delicadas y uso intensivo en el sector industrial o doméstico.</p>
+                <a href="#" class="btn">Saber más</a>
+            </div>
 
-        <div class="form-group">
-            <label for="email">Tu Correo Electrónico:</label>
-            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
-        </div>
+            <div class="image-section">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" 
+                     alt="Bayeta de microfibra profesional" 
+                     class="product-image">
+            </div>
+        </main>
 
-        <button class="bizum-btn" onclick="alert('Para completar tu pedido:\n1. Realiza un Bizum de 20€ al 635518117\n2. Pon tu correo en el concepto.\n¡Gracias por confiar en Videlas!')">
-            PAGAR CON BIZUM (635 518 117)
-        </button>
-
-        <p class="footer-note">Una vez realizado el pago, recibirás un correo de confirmación.</p>
+        <footer>
+            <p>&copy; 2026 Tu Empresa Profesional. Todos los derechos reservados.</p>
+        </footer>
     </div>
-</div>
 
 </body>
 </html>
