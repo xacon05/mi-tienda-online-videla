@@ -19,20 +19,41 @@
         .foto img:hover { transform: scale(1.03); }
         h1 { color: #e2001a; margin: 0; font-size: 2.2rem; }
         .precio { font-size: 2.5rem; font-weight: 800; color: #333; margin: 10px 0; }
-        .formulario { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        
+        /* Sección de Info de la Bayeta */
+        .detalles-producto {
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #444;
+        }
+        .detalles-producto div { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .detalles-producto i { color: #25d366; }
+
+        .formulario { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
         input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+        
         .btn-enviar {
-            background: #1a1a1a; color: #fff; border: none; padding: 18px; font-weight: bold;
+            background: #e2001a; color: #fff; border: none; padding: 18px; font-weight: bold;
             border-radius: 8px; cursor: pointer; transition: 0.3s; font-size: 1.1rem;
         }
-        .btn-enviar:hover { background: #e2001a; transform: translateY(-2px); }
-        .bizum { background: #e3f2fd; padding: 15px; border-radius: 10px; border-left: 5px solid #00aae4; margin-top: 20px; }
+        .btn-enviar:hover { background: #b30015; transform: translateY(-2px); }
+
+        /* Estilo Bizum con Copiar */
+        .bizum-box {
+            background: #f0faff; padding: 15px; border-radius: 10px; border: 1px dashed #00aae4;
+            margin-top: 20px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .btn-copiar {
+            background: #00aae4; color: white; border: none; padding: 5px 10px; 
+            border-radius: 5px; cursor: pointer; font-size: 0.8rem;
+        }
+
         .btn-whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff;
             width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center;
             align-items: center; font-size: 35px; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
         }
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; padding: 20px; } }
     </style>
 </head>
 <body>
@@ -40,22 +61,34 @@
     <div class="container">
         <div class="foto">
             <img src="vileda.jpg" alt="Vileda Profesional">
+            
+            <div class="detalles-producto">
+                <h3><i class="fas fa-info-circle" style="color:#e2001a"></i> ¿Por qué elegirla?</h3>
+                <div><i class="fas fa-check"></i> <strong>Microfibra PURmicro:</strong> No deja rastros.</div>
+                <div><i class="fas fa-check"></i> <strong>Máxima Higiene:</strong> Elimina el 99% de bacterias.</div>
+                <div><i class="fas fa-check"></i> <strong>Larga duración:</strong> Resiste cientos de lavados.</div>
+                <div><i class="fas fa-check"></i> <strong>Multiusos:</strong> Ideal para cristales, acero y muebles.</div>
+            </div>
         </div>
         
         <div class="info">
             <h1>Vileda Professional</h1>
             <div class="precio">20,00€</div>
-            <p style="color: #666;">Bayeta profesional de máxima calidad. Envío tras Bizum.</p>
+            <p style="color: #666;">Pack profesional. El estándar de limpieza en hoteles y hospitales ahora en tu casa.</p>
             
             <form action="https://formspree.io/f/mlgnlyyq" method="POST" class="formulario">
                 <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Correo (xacon005@gmail.com)" required>
-                <textarea name="mensaje" rows="3" placeholder="¿Cuántas necesitas?"></textarea>
-                <button type="submit" class="btn-enviar">ENVIAR PEDIDO POR EMAIL</button>
+                <input type="email" name="email" placeholder="Tu Correo" required>
+                <textarea name="mensaje" rows="2" placeholder="¿Cuántas necesitas? (Ej: 2 packs)"></textarea>
+                <button type="submit" class="btn-enviar">RESERVAR Y PAGAR</button>
             </form>
 
-            <div class="bizum">
-                <strong>Bizum:</strong> <span style="color:#00aae4; font-weight: bold;">635 51 81 17</span>
+            <div class="bizum-box">
+                <div>
+                    <strong>Pagar con Bizum:</strong><br>
+                    <span id="num-bizum" style="color:#00aae4; font-weight: bold; font-size: 1.2rem;">635 51 81 17</span>
+                </div>
+                <button class="btn-copiar" onclick="copiarBizum()">COPIAR NÚMERO</button>
             </div>
         </div>
     </div>
@@ -63,6 +96,15 @@
     <a href="https://wa.me/34635518117?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20pedir%20bayetas" class="btn-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        function copiarBizum() {
+            const numero = "635518117";
+            navigator.clipboard.writeText(numero).then(() => {
+                alert("Número de Bizum copiado: " + numero + ". Pégalo en la app de tu banco.");
+            });
+        }
+    </script>
 
 </body>
 </html>
