@@ -3,128 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportShop 2026 | Equipaciones Oficiales</title>
+    <title>Videlas Premium | Limpieza Profesional</title>
     <style>
         :root {
-            --bg-dark: #121212;
-            --card-dark: #1e1e1e;
-            --accent: #ff4757;
-            --text-light: #ffffff;
-            --barca: #a50044;
-            --madrid: #000000;
-            --betis: #008f39;
+            --primary: #2c3e50;
+            --gold: #c5a059;
+            --bg: #f9f9f9;
+            --text: #333;
         }
 
         body {
-            font-family: 'Oswald', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            font-family: 'Playfair Display', serif; /* Fuente elegante y formal */
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            text-transform: uppercase;
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #000 0%, #333 100%);
+            background: white;
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--accent);
+            border-bottom: 1px solid #ddd;
         }
 
-        .container {
+        header h1 { 
+            margin: 0; 
+            letter-spacing: 4px; 
+            color: var(--primary);
+            font-size: 2.5rem;
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 40px auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            align-items: center;
         }
 
-        .card {
-            background: var(--card-dark);
-            border: 1px solid #333;
-            border-radius: 0px;
-            overflow: hidden;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .card:hover { border-color: var(--accent); transform: scale(1.02); }
-
-        /* Ajuste para que las fotos se vean perfectas */
-        .card img {
+        .hero img {
             width: 100%;
-            height: 400px;
-            object-fit: contain; /* Para que no se corte la camiseta */
-            background: #fff; /* Fondo blanco para que resalte la prenda */
+            height: auto;
+            border-radius: 4px;
         }
 
-        .badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent);
-            padding: 5px 15px;
-            font-weight: bold;
+        .product-info { padding: 20px; }
+        
+        .brand { color: var(--gold); font-weight: bold; letter-spacing: 2px; }
+        
+        .price { 
+            font-size: 2.2rem; 
+            margin: 20px 0; 
+            color: var(--primary);
+            font-family: sans-serif;
         }
 
-        .info { padding: 25px; text-align: left; }
-        .price { font-size: 2rem; color: var(--accent); margin: 10px 0; }
+        .form-group { margin-bottom: 20px; }
 
-        .buy-btn {
-            display: block;
+        input[type="email"] {
             width: 100%;
-            padding: 15px;
-            text-align: center;
-            text-decoration: none;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 8px;
+        }
+
+        .bizum-btn {
+            display: inline-block;
+            width: 100%;
+            background-color: #00aae4; /* Color oficial Bizum */
             color: white;
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
             font-weight: bold;
+            font-family: sans-serif;
+            border-radius: 5px;
+            transition: 0.3s;
             border: none;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .btn-barca { background-color: var(--barca); }
-        .btn-madrid { background-color: var(--madrid); border: 1px solid #fff; }
-        .btn-betis { background-color: var(--betis); }
+        .bizum-btn:hover { background-color: #008cb8; }
+
+        .footer-note {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 15px;
+            text-align: center;
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <h1>EQUIPACIONES TEMPORADA 25/26</h1>
-    <p>Haz clic para ver info oficial y comprar • 20€</p>
+    <div class="brand">EXCELENCIA EN LIMPIEZA</div>
+    <h1>VIDELAS PREMIUM</h1>
 </header>
 
-<div class="container">
-    <div class="card">
-        <div class="badge">OFERTA</div>
-        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/60334800-4560-449e-b14a-579541249b5c/equipaci%C3%B3n-stadium-del-fc-barcelona-2024-25-primera-camiseta-de-f%C3%BAtbol-dri-fit-l33fV8.png" alt="Camiseta Barça">
-        <div class="info">
-            <h2>FC BARCELONA</h2>
-            <div class="price">20€</div>
-            <button class="buy-btn btn-barca" onclick="window.location.href='https://www.fcbarcelona.es/es/tienda/equipaciones'">INFO Y COMPRA</button>
-        </div>
-    </div>
+<div class="hero">
+    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop" alt="Bayetas Videlas">
+    
+    <div class="product-info">
+        <h2>Bayeta Microfibra Videla</h2>
+        <p>Tecnología avanzada para un acabado impecable en cristales y superficies delicadas. Utilizada por profesionales del sector.</p>
+        
+        <div class="price">20,00€</div>
 
-    <div class="card">
-        <div class="badge">TOP VENTAS</div>
-        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3673752e257e49f69796856037e54f9a_9366/Camiseta_oficial_Real_Madrid_24-25_Blanco_IY1761_01_laydown.jpg" alt="Camiseta Madrid">
-        <div class="info">
-            <h2>REAL MADRID</h2>
-            <div class="price">20€</div>
-            <button class="buy-btn btn-madrid" onclick="window.location.href='https://shop.realmadrid.com/es-es/equipaciones'">INFO Y COMPRA</button>
+        <div class="form-group">
+            <label for="email">Tu Correo Electrónico:</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="badge">NUEVA</div>
-        <img src="https://shop.realbetisbalompie.es/cdn/shop/files/705753-902-1_1000x.jpg" alt="Camiseta Betis">
-        <div class="info">
-            <h2>REAL BETIS</h2>
-            <div class="price">20€</div>
-            <button class="buy-btn btn-betis" onclick="window.location.href='https://shop.realbetisbalompie.es/es-es/collections/kits'">INFO Y COMPRA</button>
-        </div>
+        <button class="bizum-btn" onclick="alert('Para completar tu pedido:\n1. Realiza un Bizum de 20€ al 635518117\n2. Pon tu correo en el concepto.\n¡Gracias por confiar en Videlas!')">
+            PAGAR CON BIZUM (635 518 117)
+        </button>
+
+        <p class="footer-note">Una vez realizado el pago, recibirás un correo de confirmación.</p>
     </div>
 </div>
 
