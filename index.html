@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta Profesional - Vileda</title>
     <style>
+        /* Fondo con degradado para dar dinamismo */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             margin: 0;
             display: flex;
             justify-content: center;
@@ -20,15 +21,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            border: 1px solid #eeeeee;
+            background-color: #ffffff;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         .foto-producto {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -36,23 +34,35 @@
         .foto-producto img {
             width: 100%;
             height: auto;
-            display: block;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        /* Efecto al pasar el ratón por la foto */
+        .foto-producto img:hover {
+            transform: scale(1.05);
         }
         h1 {
             color: #e2001a;
             font-size: 2.4rem;
-            margin: 0 0 15px 0;
+            margin: 0 0 10px 0;
+        }
+        .precio {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
         }
         .descripcion {
             font-size: 1.1rem;
-            color: #444;
+            color: #555;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
         .contacto-box {
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             padding: 20px;
-            border-radius: 10px;
-            margin-top: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #00aae4;
         }
         .info-dato {
             margin: 10px 0;
@@ -71,15 +81,16 @@
             padding: 18px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-top: 25px;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
         }
         .btn-pedido:hover {
             background-color: #e2001a;
+            box-shadow: 0 5px 15px rgba(226, 0, 26, 0.3);
         }
         @media (max-width: 700px) {
-            .container { grid-template-columns: 1fr; padding: 20px; }
+            .container { grid-template-columns: 1fr; padding: 25px; }
         }
     </style>
 </head>
@@ -87,11 +98,13 @@
 
 <div class="container">
     <div class="foto-producto">
-        <img src="vileda.jpg" alt="Bayeta Profesional Vileda">
+        <img src="videla.jpg" alt="Bayeta Vileda Profesional">
     </div>
     
     <div class="info">
         <h1>Vileda Professional</h1>
+        <div class="precio">Precio: 20,00€</div>
+        
         <p class="descripcion">Bayeta de máxima calidad y resistencia profesional. Absorción superior para resultados impecables sin rastro.</p>
         
         <div class="contacto-box">
@@ -102,7 +115,7 @@
             </div>
         </div>
         
-        <a href="mailto:xacon005@gmail.com?subject=Pedido%20Vileda" class="btn-pedido">ENVIAR CORREO PARA PEDIDO</a>
+        <a href="mailto:xacon005@gmail.com?subject=Pedido%20Bayetas%20Vileda&body=Hola,%20estoy%20interesado%20en%20comprar%20las%20bayetas%20por%2020%20euros." class="btn-pedido">ENVIAR CORREO PARA PEDIDO</a>
     </div>
 </div>
 
